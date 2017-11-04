@@ -1,5 +1,6 @@
 import template from './usersList.html';
 import controller from './usersList.controller';
+import './usersList.css';
 
 let usersListComponent = {
     restrict: 'E',

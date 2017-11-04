@@ -1,3 +1,5 @@
+import { LATITUDE_KEYNAME, LONGTITUDE_KEYNAME } from '../constants/userKeys';
+
 class appController {
     constructor(userService) {
         "ngInject";
@@ -7,6 +9,7 @@ class appController {
     $onInit() {
         this.usersList = [];
         this.selectedUser = null;
+        this.mapCenter = {latitude: 45, longitude: -73};
         this.loadUsers();
     }
 

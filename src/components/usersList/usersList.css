@@ -1,0 +1,4 @@
+users-list .listWrapper {
+    height: 500px;
+    overflow-y: scroll;
+}

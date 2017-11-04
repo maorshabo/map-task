@@ -1,14 +1,16 @@
-<ui-gmap-google-map center="vm.map.center" zoom="vm.map.zoom">
+<ui-gmap-google-map center="vm.map.center" zoom="vm.map.zoom" control="vm.map.control" pan="true">
     <ui-gmap-marker
             idKey="marker._id"
             coords="marker.coordinates"
+            click="vm.onMarkerClick(marker)"
             ng-repeat="marker in vm.markers"
     >
+        <ui-gmap-window options="marker.infoWindow" show="marker.infoWindow.visible"
+                        closeClick="vm.onWindowCloseClick(marker)">
+            <div>
+                <p class="font-weight-bold">{{ marker.name }}</p>
+                <p>{{ marker.age }}</p>
+            </div>
+        </ui-gmap-window>
     </ui-gmap-marker>
-    <ui-gmap-window
-            coords="vm.infoOpts.coords"
-            show="vm.infoOpts.shown"
-            templateParameter="vm.selectedMarker"
-    >
-    </ui-gmap-window>
 </ui-gmap-google-map>

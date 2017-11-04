@@ -5,7 +5,9 @@ import './googleMap.css';
 let googleMapComponent = {
     restrict: 'E',
     bindings: {
-        markers: '<'
+        center: '<',
+        users: '<',
+        selectedMarker: '<'
     },
     template,
     controller,

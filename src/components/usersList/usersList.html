@@ -5,8 +5,10 @@
         <button class="btn btn-primary" ng-class="" ng-click="vm.sortBy(vm.CRITERIA.NAME)">Sort by name</button>
         <span>Total: {{ vm.list.length }}</span>
     </div>
-    <user-card user="user" ng-repeat="user in vm.list | orderBy: vm.orderByKey track by user._id"
-               on-remove-click="vm.removeUser(user)" on-item-click="vm.selectUser(user)"></user-card>
+    <div class="listWrapper">
+        <user-card user="user" ng-repeat="user in vm.list | orderBy: vm.orderByKey track by user._id"
+                   on-remove-click="vm.removeUser(user)" on-item-click="vm.selectUser(user)"></user-card>
+    </div>
     <div class="noResults" ng-if="vm.list.length == 0">
         <p>No results</p>
     </div>

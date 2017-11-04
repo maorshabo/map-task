@@ -1,3 +1,5 @@
+import { COORDINATES_KEYNAME, LATITUDE_KEYNAME, LONGTITUDE_KEYNAME } from '../../constants/userKeys';
+
 const users = [
     {
         "_id": "59fdc1b4481cf2d67801d4ba",
@@ -782,9 +784,6 @@ const users = [
         "longitude": -79.175464
     }
 ];
-const COORDINATES_KEYNAME = 'coordinates';
-const LONGTITUDE_KEYNAME = 'longitude';
-const LATITUDE_KEYNAME = 'latitude';
 
 class UserService {
     constructor($q) {
@@ -805,7 +804,10 @@ class UserService {
 
     parseUsers(users) {
         return users.map(user => {
-            user[COORDINATES_KEYNAME] = [user[LATITUDE_KEYNAME], user[LONGTITUDE_KEYNAME]];
+            user[COORDINATES_KEYNAME] = {
+                [LATITUDE_KEYNAME]: user[LATITUDE_KEYNAME],
+                [LONGTITUDE_KEYNAME]: user[LONGTITUDE_KEYNAME]
+            };
             return user;
         });
     }
