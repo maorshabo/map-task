@@ -30,7 +30,7 @@ module.exports = function makeWebpackConfig() {
    * Karma will set this when it's a test build
    */
   config.entry = isTest ? void 0 : {
-    app: './src/app/app.js'
+    app: './src/app.js'
   };
 
   /**
@@ -86,7 +86,7 @@ module.exports = function makeWebpackConfig() {
       // Transpile .js files using babel-loader
       // Compiles ES6 and ES7 into ES5 code
       test: /\.js$/,
-      loader: 'babel-loader',
+      loader: 'ng-annotate-loader!babel-loader',
       exclude: /node_modules/
     }, {
       // CSS LOADER
@@ -167,7 +167,12 @@ module.exports = function makeWebpackConfig() {
           plugins: [autoprefixer]
         }
       }
-    })
+    }),
+      new webpack.ProvidePlugin({
+          $: "jquery",
+          jQuery: "jquery",
+          Promise: 'es6-promise'
+      })
   ];
 
   // Skip rendering index.html in test mode

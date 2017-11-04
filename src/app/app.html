@@ -1,9 +1,7 @@
-<main>
-  <h1 class="title">Hello from Angular !</h1>
-
-  <!-- Images (and assets) are parsed and loaded from within the public directory -->
-  <img src="/img/logo.png">
-</main>
-<footer>
-  <a ng-href="{{app.url}}">Webpack Angular Starter</a>
-</footer>
+<!-- Place all UI elements intended to be present across all routes in this file -->
+<div>homepage</div>
+{{ vm.usersList }}
+<users-list list="vm.usersList"
+            on-add-user-click="vm.addUser(user)"
+            on-user-click="vm.selectUser(user)"
+            on-remove-user-click="vm.removeUser(user)"></users-list>
