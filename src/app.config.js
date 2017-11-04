@@ -1,4 +1,3 @@
-
 function appConfig(uiGmapGoogleMapApiProvider) {
     "ngInject";
     uiGmapGoogleMapApiProvider.configure({
