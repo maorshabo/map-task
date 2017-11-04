@@ -1,15 +1,15 @@
-<div class="userCard card">
+<div class="userCard card notActive" ng-class="{'active': vm.user.isActive}">
     <div class="row" ng-click="vm.onItemClick({user: vm.user})">
         <div class="col-sm-3">
-            <img ng-src="{{ vm.user.profile }}" class="img-responsive"/>
+            <img ng-src="{{ vm.user.profile }}" class="img-responsive cursor-pointer" />
         </div>
         <div class="col-sm-9">
-            <h3>{{ vm.user.name }}</h3>
+            <h3 class="cursor-pointer">{{ vm.user.name }}</h3>
             <div class="row">
                 <div class="body col-sm-8">
                     <p>Age: {{ vm.user.age }}</p>
                     <p>Email: {{ vm.user.email }}</p>
-                    <p>Is Active: {{ vm.user.isActive }}</p>
+                    <p class="font-weight-bold color-danger" ng-class="{'color-success' : vm.user.isActive }">Is Active: {{ vm.user.isActive }}</p>
                 </div>
                 <div class="bottom col-sm-4">
                     <div class="col-sm-12 text-right">

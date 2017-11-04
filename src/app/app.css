@@ -32,11 +32,6 @@ app, users-list {
   height:100%;
 }
 
-users-list {
-  overflow-y: auto;
-  padding:3px;
-}
-
 .fill {
   min-height: 100%;
   height: 100%;
@@ -48,4 +43,16 @@ users-list {
 
 p {
   margin:0;
+}
+
+.color-danger {
+  color:red;
+}
+
+.color-success {
+  color:green;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

@@ -7,7 +7,8 @@
     >
         <ui-gmap-window options="marker.infoWindow" show="marker.infoWindow.visible"
                         closeClick="vm.onWindowCloseClick(marker)">
-            <div>
+            <div class="info-window">
+                <img ng-src="{{ marker.profile }}" class="profile-icon" />
                 <p class="font-weight-bold">{{ marker.name }}</p>
                 <p>{{ marker.age }}</p>
             </div>

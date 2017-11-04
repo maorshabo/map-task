@@ -42,6 +42,7 @@ class GoogleMapController {
             if (newValue) {
                 console.log(`process ${newValue.length} markers`);
                 this.markers = this.parseMarkers(newValue);
+                this.map.control.refresh();
             }
         });
     }

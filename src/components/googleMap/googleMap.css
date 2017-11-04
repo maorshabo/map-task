@@ -3,11 +3,19 @@ ui-gmap-google-map,
 .angular-google-map {
     display: block;
     height: 100%;
-    min-height:400px;
+    min-height: 400px;
     position: relative;
     z-index: 90;
 }
 
 .angular-google-map-container {
     height: 100%;
+}
+
+.profile-icon {
+    max-width: 64px !important;
+}
+
+.info-window {
+    text-align: center;
 }
