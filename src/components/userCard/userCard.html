@@ -1,5 +1,5 @@
 <div class="userCard">
-    <div class="header" ng-click="vm.onItemClick(vm.user)">
+    <div class="header" ng-click="vm.onItemClick({user: vm.user})">
         <div class="userImage">
             <img ng-src="{{ vm.user.picture }}" class="img-responsive" />
         </div>
@@ -14,7 +14,7 @@
     </div>
     <div class="bottom">
         <div class="pull-right">
-            <button ng-click="vm.onRemoveClick(vm.user)">Remove</button>
+            <button ng-click="vm.onRemoveClick({user: vm.user})">Remove</button>
         </div>
     </div>
 </div>
