@@ -32,6 +32,7 @@ class GoogleMapController {
                 if (marker) {
                     this.closeAllWindowInfos();
                     marker.infoWindow.visible = true;
+                    this.map.zoom = 4;
                     this.map.control.refresh(marker.coordinates);
                 }
             }
@@ -39,6 +40,7 @@ class GoogleMapController {
 
         this._$scope.$watch('vm.users', (newValue) => {
             if (newValue) {
+                console.log(`process ${newValue.length} markers`);
                 this.markers = this.parseMarkers(newValue);
             }
         });

@@ -1,14 +1,13 @@
-<!-- Place all UI elements intended to be present across all routes in this file -->
-<div>homepage</div>
-
-<div class="container">
-    <div class="col-sm-6">
-        <users-list list="vm.usersList"
-                    on-add-user-click="vm.addUser(user)"
-                    on-user-click="vm.selectUser(user)"
-                    on-remove-user-click="vm.removeUser(user)"></users-list>
-    </div>
-    <div class="col-sm-6">
-        <google-map users="vm.usersList" center="vm.mapCenter" selected-marker="vm.selectedUser"></google-map>
+<div class="container-fluid fill">
+    <div class="row fill">
+        <div class="col-sm-6 fill">
+            <users-list list="vm.usersList"
+                        on-add-user-click="vm.addUser(user)"
+                        on-user-click="vm.selectUser(user)"
+                        on-remove-user-click="vm.removeUser(user)"></users-list>
+        </div>
+        <div class="col-sm-6 fill">
+            <google-map users="vm.usersList" center="vm.mapCenter" selected-marker="vm.selectedUser"></google-map>
+        </div>
     </div>
 </div>

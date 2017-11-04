@@ -1,13 +1,13 @@
 import angular from 'angular';
 import 'angular-simple-logger';
 import 'angular-google-maps';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'underscore';
 
 import AppComponent from './app/app.component';
 import Components from './components';
 // import Directives from './directives/directives';
 import Utils from './utils/utils.module';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'underscore';
 import AppRun from './app.run';
 import AppConfig from './app.config';
 

@@ -1,4 +1,18 @@
-users-list .listWrapper {
-    height: 500px;
-    overflow-y: scroll;
+.usersListWrapper {
+    position: relative;
+}
+
+.usersListWrapper .tools {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:9;
+    background:rgba(255,255,255,.8);
+    padding:5px 10px;
+    box-shadow: 1px 1px 1px #FFF;
+    width:100%;
+}
+
+.usersListWrapper .listWrapper {
+    margin-top:50px;
 }

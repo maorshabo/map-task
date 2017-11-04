@@ -22,7 +22,13 @@ class appController {
     }
 
     addUser() {
+        if (this.usersList.length === 100) {
+            window.alert('No more users');
+        }
 
+        this._userService.getUsers(this.usersList.length + 1).then(users => {
+            this.usersList = users;
+        });
     }
 
     removeUser(user) {
@@ -34,7 +40,6 @@ class appController {
 
     selectUser(user) {
         this.selectedUser = user;
-        console.log(this.selectedUser);
     }
 }
 
