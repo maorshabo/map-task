@@ -1,7 +1,14 @@
 <!-- Place all UI elements intended to be present across all routes in this file -->
 <div>homepage</div>
-{{ vm.usersList }}
-<users-list list="vm.usersList"
-            on-add-user-click="vm.addUser(user)"
-            on-user-click="vm.selectUser(user)"
-            on-remove-user-click="vm.removeUser(user)"></users-list>
+
+<div class="container">
+    <div class="col-sm-6">
+        <users-list list="vm.usersList"
+                    on-add-user-click="vm.addUser(user)"
+                    on-user-click="vm.selectUser(user)"
+                    on-remove-user-click="vm.removeUser(user)"></users-list>
+    </div>
+    <div class="col-sm-6">
+        <google-map markers="vm.usersList"></google-map>
+    </div>
+</div>

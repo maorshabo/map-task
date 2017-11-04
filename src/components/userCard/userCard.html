@@ -1,0 +1,20 @@
+<div class="userCard">
+    <div class="header" ng-click="vm.onItemClick(vm.user)">
+        <div class="userImage">
+            <img ng-src="{{ vm.user.picture }}" class="img-responsive" />
+        </div>
+        <div class="userName">
+            <h3>{{ vm.user.name }}</h3>
+        </div>
+    </div>
+    <div class="body">
+        <p>Age: {{ vm.user.age }}</p>
+        <p>Email: {{ vm.user.email }}</p>
+        <p>Is Active: {{ vm.user.isActive }}</p>
+    </div>
+    <div class="bottom">
+        <div class="pull-right">
+            <button ng-click="vm.onRemoveClick(vm.user)">Remove</button>
+        </div>
+    </div>
+</div>

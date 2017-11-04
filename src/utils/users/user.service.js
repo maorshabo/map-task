@@ -782,6 +782,9 @@ const users = [
         "longitude": -79.175464
     }
 ];
+const COORDINATES_KEYNAME = 'coordinates';
+const LONGTITUDE_KEYNAME = 'longitude';
+const LATITUDE_KEYNAME = 'latitude';
 
 class UserService {
     constructor($q) {
@@ -795,10 +798,16 @@ class UserService {
      */
     getUsers(limit = 100) {
         // TODO: remove the dependecy on this._$q;
-
         let defer = this._$q.defer();
-        defer.resolve(users.slice(0, limit));
+        defer.resolve(this.parseUsers(users.slice(0, limit)));
         return defer.promise;
+    }
+
+    parseUsers(users) {
+        return users.map(user => {
+            user[COORDINATES_KEYNAME] = [user[LATITUDE_KEYNAME], user[LONGTITUDE_KEYNAME]];
+            return user;
+        });
     }
 
     loadInitUsers() {

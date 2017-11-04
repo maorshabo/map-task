@@ -2,12 +2,9 @@ class UsersListController {
     constructor() {
         "ngInject";
         this.list = [];
-        console.log('contructor');
     }
 
     $onInit() {
-        console.log('init');
-        console.log(this.list);
     }
 
     addUser(user) {

@@ -1,0 +1,14 @@
+<ui-gmap-google-map center="vm.map.center" zoom="vm.map.zoom">
+    <ui-gmap-marker
+            idKey="marker._id"
+            coords="marker.coordinates"
+            ng-repeat="marker in vm.markers"
+    >
+    </ui-gmap-marker>
+    <ui-gmap-window
+            coords="vm.infoOpts.coords"
+            show="vm.infoOpts.shown"
+            templateParameter="vm.selectedMarker"
+    >
+    </ui-gmap-window>
+</ui-gmap-google-map>

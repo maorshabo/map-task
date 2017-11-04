@@ -12,7 +12,6 @@ class appController {
     loadUsers() {
         let vm = this;
         this._userService.loadInitUsers().then(users => {
-            console.log(users);
             vm.usersList = users;
         });
     }
